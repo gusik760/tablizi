@@ -1,0 +1,16 @@
+SELECT director_id, budget
+FROM movies
+GROUP BY director_id
+ORDER BY budget
+
+
+SELECT title, genre, name AS director_name
+FROM movies
+INNER JOIN directors ON movies.director_id = directors.id
+INNER JOIN movies_genres ON movies.id = movies_genres.movie_id
+INNER JOIN genres ON movies_genres.genre_id = genres.genre_id
+
+
+SELECT director_id, COUNT(*) 
+FROM movies
+GROUP BY director_id
